@@ -82,10 +82,9 @@ public class ExpGCS3 {
                 searchTime = sw.getTime();
             }
 
-            // 添加当前的解
+            // add current solution
             resAllClass.add(pgs.getCurSolution());
 
-            // 记录结果 - Group 部分
             log.info("--groups--");
             List<List<SFVDNode>> groups = pgs.getGroups();
             List<List<Integer>> groupOutline = new ArrayList<>();
@@ -121,10 +120,8 @@ public class ExpGCS3 {
             data1[classIdx][idx++] = JSON.toJSONString(this.searchTime);
             data1[classIdx][idx] = JSON.toJSONString("-");
             classIdx++;
-            // 保存结果
         }
 
-        // 求所有类上解的并集
         Set<Integer> finalSolution = new HashSet<>();
         for (List<SFVDNode> res : resAllClass) {
             List<Integer> collect = res.stream().map(SFVDNode::getFId).toList();

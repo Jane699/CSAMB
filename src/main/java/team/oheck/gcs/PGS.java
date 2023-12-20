@@ -169,7 +169,7 @@ public class PGS {
     }
 
     /**
-     * pFeatures作为解
+     * pFeatures as the base solution
      */
     public void genResAsPFeature() {
         curSolution = groups.stream().map(group -> group.get(0)).toList();

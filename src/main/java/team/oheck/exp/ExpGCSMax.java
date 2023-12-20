@@ -82,10 +82,9 @@ public class ExpGCSMax {
                 searchTime = sw.getTime();
             }
 
-            // 添加当前的解
+            // add current solution
             resAllClass.add(pgs.getCurSolution());
 
-            // 记录结果 - Group 部分
             log.info("--groups--");
             List<List<SFVDNode>> groups = pgs.getGroups();
             List<List<Integer>> groupOutline = new ArrayList<>();
@@ -104,7 +103,6 @@ public class ExpGCSMax {
             log.info(resOutline);
             log.info("len(res): " + res.size());
 
-            // 记录结果 - Result 部分
             int idx = 0;
             data1[classIdx][idx++] = dataSet;
             data1[classIdx][idx++] = String.valueOf(dv);
@@ -121,10 +119,8 @@ public class ExpGCSMax {
             data1[classIdx][idx++] = JSON.toJSONString(this.searchTime);
             data1[classIdx][idx] = JSON.toJSONString("-");
             classIdx++;
-            // 保存结果
         }
 
-        // 求所有类上解的并集
         Set<Integer> finalSolution = new HashSet<>();
         for (List<SFVDNode> res : resAllClass) {
             List<Integer> collect = res.stream().map(SFVDNode::getFId).toList();

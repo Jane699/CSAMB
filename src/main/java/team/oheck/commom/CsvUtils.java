@@ -13,15 +13,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * CSV文件处理工具，基于commons-csv
+ * csv util
  */
 public class CsvUtils {
     /**
-     * 写入到CSV文件
+     * Write to csv file
      *
-     * @param path  写出文件路径
-     * @param title 头部
-     * @param data  数据
+     * @param path  path
+     * @param title header
+     * @param data  data
      */
     public static void toCsv(String path, Object[] title, Object[][] data) {
         File f = new File(path);
@@ -55,10 +55,10 @@ public class CsvUtils {
     }
 
     /**
-     * 读取CSV文件
+     * read csv file
      *
-     * @param path 读入文件路径
-     * @return CSV文件内容
+     * @param path file path
+     * @return content
      */
     public static List<List<String>> readCsv(String path) {
         List<List<String>> res = new ArrayList<>();
@@ -77,10 +77,10 @@ public class CsvUtils {
     }
 
     /**
-     * 二维List转为二维String数组
+     * 2D List to 2d Array
      *
-     * @param table 二维List对象
-     * @return 二维String数组对象
+     * @param table 2D List
+     * @return 2D Array
      */
     public static String[][] listTableToArrayTable(List<List<String>> table) {
         List<String[]> res = new ArrayList<>();
